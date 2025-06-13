@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json.schemastore.org/aspire-8.0.json",
+  "resources": {
+    "dexter-server": {
+      "type": "project.v0",
+      "path": "../Dexter.Server/Dexter.Server.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY": "in_memory",
+        "ASPNETCORE_FORWARDEDHEADERS_ENABLED": "true",
+        "HTTP_PORTS": "{dexter-server.bindings.http.targetPort}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http",
+          "external": true
+        },
+        "https": {
+          "scheme": "https",
+          "protocol": "tcp",
+          "transport": "http",
+          "external": true
+        }
+      }
+    },
+    "dexter-client": {
+      "type": "project.v0",
+      "path": "../Dexter.Client/Dexter.Client.esproj",
+      "env": {
+        "NODE_ENV": "development",
+        "services__dexter-server__http__0": "{dexter-server.bindings.http.url}",
+        "services__dexter-server__https__0": "{dexter-server.bindings.https.url}",
+        "PORT": "{dexter-client.bindings.http.targetPort}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http",
+          "targetPort": 8001,
+          "external": true
+        }
+      }
+    }
+  }
+}

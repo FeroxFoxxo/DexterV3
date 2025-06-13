@@ -1,0 +1,4 @@
+@AspireJavaScript.MinimalApi_HostAddress = http://localhost:5084
+
+GET {{AspireJavaScript.MinimalApi_HostAddress}}/weatherforecast/
+Accept: application/json
