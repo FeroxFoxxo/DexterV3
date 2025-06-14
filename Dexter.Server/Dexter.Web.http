@@ -1,4 +1,0 @@
-@Dexter.Web_HostAddress = http://localhost:5084
-
-GET {{Dexter.Web_HostAddress}}/weatherforecast/
-Accept: application/json

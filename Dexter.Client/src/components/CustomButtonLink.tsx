@@ -5,18 +5,18 @@ import type { ButtonProps } from '@mui/material'
 import type { LinkComponent } from '@tanstack/react-router'
 
 interface MUIButtonLinkProps extends ButtonProps<'a'> {
-  // Add any additional props you want to pass to the Button
+    // Add any additional props you want to pass to the Button
 }
 
 const MUIButtonLinkComponent = React.forwardRef<
-  HTMLAnchorElement,
-  MUIButtonLinkProps
+    HTMLAnchorElement,
+    MUIButtonLinkProps
 >((props, ref) => <Button ref={ref} component="a" {...props} />)
 
 const CreatedButtonLinkComponent = createLink(MUIButtonLinkComponent)
 
 export const CustomButtonLink: LinkComponent<typeof MUIButtonLinkComponent> = (
-  props,
+    props,
 ) => {
-  return <CreatedButtonLinkComponent preload={'intent'} {...props} />
+    return <CreatedButtonLinkComponent preload={'intent'} {...props} />
 }

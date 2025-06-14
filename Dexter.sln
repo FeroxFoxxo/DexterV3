@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36203.30
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Dexter.Client", "Dexter.Client\Dexter.Client.esproj", "{87701007-9E0B-C510-ADA1-942D9FDCFAEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dexter.Web", "Dexter.Server\Dexter.Web.csproj", "{EE8355B7-4B2A-4C08-071A-03B95595A5D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dexter.Web", "Dexter.Web\Dexter.Web.csproj", "{EE8355B7-4B2A-4C08-071A-03B95595A5D6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dexter.AppHost", "Dexter.AppHost\Dexter.AppHost.csproj", "{FA647D9D-C8F6-4558-AD0E-3125B39E989D}"
 EndProject
