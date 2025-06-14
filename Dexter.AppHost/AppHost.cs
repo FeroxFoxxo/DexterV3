@@ -1,6 +1,6 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var dexterApi = builder.AddProject<Projects.Dexter_Server>("dexter-server")
+var dexterApi = builder.AddProject<Projects.Dexter_Web>("dexter-web")
     .WithExternalHttpEndpoints();
 
 builder.AddNpmApp("dexter-client", "../Dexter.Client", scriptName: "dev")

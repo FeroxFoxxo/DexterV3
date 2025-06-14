@@ -3,13 +3,13 @@
   "resources": {
     "dexter-server": {
       "type": "project.v0",
-      "path": "../Dexter.Server/Dexter.Server.csproj",
+      "path": "../Dexter.Web/Dexter.Web.csproj",
       "env": {
         "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
         "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
         "OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY": "in_memory",
         "ASPNETCORE_FORWARDEDHEADERS_ENABLED": "true",
-        "HTTP_PORTS": "{dexter-server.bindings.http.targetPort}"
+        "HTTP_PORTS": "{dexter-web.bindings.http.targetPort}"
       },
       "bindings": {
         "http": {
@@ -31,8 +31,8 @@
       "path": "../Dexter.Client/Dexter.Client.esproj",
       "env": {
         "NODE_ENV": "development",
-        "services__dexter-server__http__0": "{dexter-server.bindings.http.url}",
-        "services__dexter-server__https__0": "{dexter-server.bindings.https.url}",
+        "services__dexter-web__http__0": "{dexter-web.bindings.http.url}",
+        "services__dexter-web__https__0": "{dexter-web.bindings.https.url}",
         "PORT": "{dexter-client.bindings.http.targetPort}"
       },
       "bindings": {

@@ -1,5 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0" />
 
 	<PropertyGroup>
@@ -17,7 +16,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Dexter.Server\Dexter.Server.csproj" />
+		<ProjectReference Include="..\Dexter.Web\Dexter.Web.csproj" />
 	</ItemGroup>
 
 	<Target Name="RestoreNpm" BeforeTargets="Build" Condition=" '$(DesignTimeBuild)' != 'true' ">

@@ -1,4 +1,4 @@
-namespace Dexter.Server;
+namespace Dexter.Web;
 
 public class WeatherForecast
 {
