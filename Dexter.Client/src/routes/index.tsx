@@ -1,8 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Stack, Typography } from '@mui/material'
+import { Stack } from '@mui/material'
 import z from 'zod'
 import { Counter } from '~/components/Counter'
 import { useQuery } from '@tanstack/react-query'
+import { WeatherTable } from '../components/WeatherTable'
 
 export const Route = createFileRoute('/')({
     validateSearch: z.object({
@@ -11,25 +12,30 @@ export const Route = createFileRoute('/')({
     component: RouteComponent,
 })
 
+export type WeatherForecast = {
+    date: string;
+    temperatureC: number;
+    temperatureF: number;
+    summary?: string | null;
+}
+
 function RouteComponent() {
-    const { isPending, error, data } = useQuery({
+    const { isPending, error, data } = useQuery<WeatherForecast[]>({
         queryKey: ['repoData'],
         queryFn: () =>
             fetch('/api/WeatherForecast').then((res) =>
                 res.json(),
             ),
-    })
+    });
 
-    if (isPending) return 'Loading...'
+    if (isPending) return 'Loading...';
 
-    if (error) return 'An error has occurred: ' + error.message
+    if (error) return 'An error has occurred: ' + error.message;
 
     return (
         <Stack alignItems="center">
-            <Typography variant="h1" marginBlockEnd={4}>
-                Hello world!
-            </Typography>
             <Counter />
+            <WeatherTable data={data} />
         </Stack>
     )
 }

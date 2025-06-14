@@ -9,8 +9,8 @@ export default defineConfig({
         proxy: {
             '/api': {
                 target:
-                    env.DEXTER_WEB_HTTPS ||
-                    env.DEXTER_WEB_HTTP,
+                    env['services__dexter-web__http__0'] ||
+                    env['services__dexter-web__https__0'],
                 rewrite: (path) => path.replace(/^\/api/, ''),
             },
         },

@@ -25,8 +25,8 @@
       "path": "../Dexter.Client/Dexter.Client.esproj",
       "env": {
         "NODE_ENV": "development",
-        "DEXTER_WEB_HTTP": "{dexter-web.bindings.http.url}",
-        "DEXTER_WEB_HTTPS": "{dexter-web.bindings.https.url}",
+        "services__dexter-web__http__0": "{dexter-web.bindings.http.url}",
+        "services__dexter-web__https__0": "{dexter-web.bindings.https.url}",
         "PORT": "{dexter-client.bindings.http.targetPort}"
       },
       "bindings": {
